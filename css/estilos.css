@@ -7,10 +7,17 @@
      --text-defaul: 'Open Sans';
 }
 
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: var(--text-defaul);
+}
+
 .titulos{
      font-size: 40px;
      font-weight: 800px;
-
+     
      text-align: center;
      text-transform: uppercase;
 
@@ -20,37 +27,32 @@
 .subtitulos{
      font-size: 25px;
      font-weight: 400px;
-
-      text-align: center;
+     
+     text-align: center;
      text-transform: uppercase;
-
+     
      color: var(--color-secundario);
-
 }
 
 .btn{
      text-decoration: none;
      text-transform: uppercase;
-
      font-size: 14px;
      color: white;
      background: var(--color-primario);
-
      font-weight: 700;
      padding: 15px 30px;
-
      outline: none;
      border: 2px solid var(--color-primario);
-
-     cursor: pointer;
+     cursor:pointer;
      position: relative;
      top: 20px;
-
      transition: all 0.3s;
 }
 
 .btn span{
      padding-left: 10px;
+
 }
 
 .btn:hover{
@@ -58,7 +60,6 @@
 }
 
 /* MENU PRINCIPAL */
-
 .menu-principal{
      width: 100%;
      display: flex;
@@ -68,27 +69,28 @@
      height: 75px;
      padding: 0 30px;
      margin-top: 10px;
+
      background: var(--color-background);
+     padding: 0 10px;
 }
 
 .logo img{
-     width: 130px;
-     cursor: pointer
-     ;
+     width:130px;
+     cursor: pointer;
 }
 
 .menu-bar{
      display: flex;
      width: 100%;
-     justify-content: space-between;
+     justify-content: space-between
 }
 
 .menu-bar .enlaces ul li{
      display: inline-block;
-     padding: 0 10px;
+     padding: 0 10px;;
 }
 
-.menu-bar .enlaces ul li{
+.menu-bar .enlaces ul li a{
      font-size: 14px;
      text-transform: uppercase;
      text-decoration: none;
@@ -96,6 +98,7 @@
      color: var(--color-texto);
      font-weight: 600;
 
+     /*Mostrasr la linea en el menu*/
      background: linear-gradient(currentColor, currentColor);
      background-position: 100% 100%;
      background-repeat: no-repeat;
@@ -107,7 +110,6 @@
 .menu-bar .enlaces ul li a:hover{
      color: var(--color-secundario);
      background-size: 50% 2px;
-
 }
 
 .menu-bar .sociales a{
@@ -127,13 +129,100 @@
      cursor: pointer;
      color: var(--color-texto);
      font-size: 30px;
-     
-     float: right; /*siempre va a estar a la derecha*/
+
+     float: right; /*Siempre va a estar a la derecha*/
+     display: none; /*No se muestra en pantallas grandes*/
+     transition: all 0.5s;
 }
 
 .menu-principal i:hover{
      color: var(--color-secundario);
 }
+
+/*sección de productos*/
+#menu-productos .contenedor-principal{
+     display: flex;
+     align-items: center;
+     position: relative;
+     z-index: 0;
+}
+
+.contenedor-principal #btn-izquierda,
+.contenedor-principal #btn-derecha{
+     position: absolute;
+     height: 10%;
+     width: 50px;
+
+     border: none;
+     background: transparent;
+     cursor: pointer;
+     font-size: 40px;
+
+     margin: 0 15px;
+     color: var(--color-secundario);
+     z-index: 500;
+     outline: none;
+     transition: all 0.5s;
+}
+
+.contenedor-principal #btn-izquierda:hover,
+.contenedor-principal #btn-derecha:hover{
+     background: var(--color-backgroud-sombra);
+     transform: translateY(5px);
+}
+
+.contenedor-principal #btn-izquierda{
+     left: 0;
+
+}
+
+.contenedor-principal #btn-derecha{
+     right: 0;
+
+}
+
+.slider{
+     display: flex;
+}
+
+.container-productos{
+     display: flex;
+
+     justify-content: center;
+     align-items: center;
+
+     flex-basis: 100%;
+     flex-shrink: 0;
+}
+
+.descripcion-productos{
+     width: 30%;
+
+}
+
+.descripcion-productos h2{
+     text-transform: lowercase;
+     font-size: 2.2vw;
+     font-weight: 100;
+}
+
+.descripcion-productos h2{
+     text-transform: uppercase;
+     font-size: 5vw;
+     font-weight: 600;
+}
+
+.descripcion-productos p{
+     color: var(--color-texto);
+     font-style: italic;
+     text-align: justify;
+}
+
+
+
+
+
+/* SECCION SERVICIOS */
 #servicios{
      height: 100vh;
      background: white;
@@ -149,39 +238,38 @@
 
 .servicios-container{
      margin-top: 30px;
+     
      display: grid;
      grid-template-columns: repeat(3, 1fr);
      grid-template-rows: repeat(2, auto);
      grid-gap: 30px;
- 
-     grid-template-areas: "ingredientes  imagen    rapidez"
-                          "calidad  imagen    delivery"   ;
+
+     grid-template-areas: 
+          "ingredientes  imagen   rapidez"
+          "calidad       imagen   delivery" ;
+
 }
 
 .calidad{
      grid-row: calidad;
      grid-column: calidad;
 }
-
 .ingredientes{
      grid-row: ingredientes;
      grid-column: ingredientes;
 }
-
 .rapidez{
      grid-row: rapidez;
      grid-column: rapidez;
 }
-
 .delivery{
      grid-row: delivery;
      grid-column: delivery;
 }
-
 .imagen-central{
      grid-row: imagen;
      grid-column: imagen;
-     transition: all 0,5s;
+     transition: all 0.5s;
 }
 
 .imagen-central:hover{
@@ -211,21 +299,20 @@
 .items span:hover{
      background: var(--color-secundario);
      color: white;
-
 }
 
-.ingredientes span, 
+.ingredientes span,
 .calidad span{
      color: var(--color-primario);
 }
 
 .ingredientes span:hover,
 .calidad span:hover{
-     background: var(--color-secundario);
+     background: var(--color-primario);
      color: white;
 }
 
-.items .titulos-item{
+.items .titulo-item{
      text-transform: uppercase;
      font-size: 15px;
      font-weight: 700;
@@ -240,60 +327,7 @@
      padding: 0 20px;
 }
 
-@media screen and (max-width:850px){
-
-     .servicios-container{
-          margin-top: 50px;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-areas: "ingredientes   rapidez"
-                                "calidad   delivery";
-     }
-
-
-
-     .imagen-central{
-          display: none;
-     }
-}
-@media screen and (max-width:650px){
-     .menu-principal{
-          position: fixed;
-          top: 0;
-          margin-top: 0;
-     }
-
-     .menu-bar{
-          justify-content: space-around;
-          align-items: center;
-          flex-direction: column;
-
-          width: 100%;
-          height: 100vh;
-          position: fixed;
-          top: 0;
-          right: 0;
-
-          
-          z-index: 1000;
-
-          background: #333;
-          transition: all 1s;
-          transform: translateX(100%);
-
-     .menu-bar .active{
-          transform: translateX(0%);
-
-     }
-     
-     }
-
-
-
-
-}
-
-
-/*sección de equipos*/
+/* SECCION DE EQUIPO */
 #equipo{
      height: 100vh;
      display: flex;
@@ -301,7 +335,7 @@
 
 .persona{
      flex-grow: 1;
-     overflow:hidden ;
+     overflow: hidden;
      position: relative;
      transition: all 0.5s;
 }
@@ -313,9 +347,9 @@
 .persona-imagen{
      height: 100%;
      position: absolute;
-
-     left: 50%;
-     transform: translate(-50%);
+     
+     left:50%;
+     transform: translateX(-50%);
 
      filter: grayscale(80%);
 }
@@ -324,14 +358,13 @@
      filter: grayscale(0%);
 }
 
-
 .persona-info{
      position: absolute;
      bottom: 10px;
      width: 100%;
-     
+
      text-align: center;
-     opacity: 0%;
+     opacity: 0;
      transition: all 0.1s;
 }
 
@@ -341,21 +374,23 @@
      transition: all 0.3s;
 }
 
-.persona-info{
-     font-size: 30px;
-     color: black;
+.persona-info h2{
+     font-size:30px;
+     color:black;
      font-weight: 600;
-     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-
+     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 .persona-info p{
+     color: var(--color-secundario);  
+
      font-size: 20px;
-     color: var(--color-secundario);
      font-style: italic;
-     margin-top: 10px;
-     margin-bottom: 10px;
      font-weight: 700;
+
+     margin-top: 10px;
+     margin-bottom: 20px;
+
      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -364,7 +399,7 @@
 
      width: 40px;
      height: 40px;
-     
+
      color: white;
      background: var(--color-secundario);
 
@@ -374,11 +409,109 @@
      margin: 0 5px;
      font-size: 18px;
      cursor: pointer;
-     transition: all 0.5s;
+     transition: all 0.5s
 }
 
 .social-media a:hover{
      color: var(--color-secundario);
      background: transparent;
      transform: scale(2);
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 850px) {
+
+     /* SECCCION SERVICIOS*/
+     .servicios-container{
+          margin-top: 50px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas:
+               "ingredientes  rapidez"
+               "calidad       delivery";
+     }
+
+     .imagen-central{
+          display: none;
+     }
+}
+
+
+
+
+
+@media screen and (max-width: 650px) {
+
+     /* MENU PRINCIPAL */
+     .menu-principal{
+          position: fixed;
+          top: 0;
+          margin-top: 0;
+     }
+
+     .menu-principal i{
+          display: block;
+     }
+
+    .menu-bar{
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: column;
+
+          width: 100%;
+          height: 100vh;
+          position: fixed;
+
+          right: 0;
+          top: 0;
+          /*Indica la profundida y es para que siempre se vea el menu*/
+          z-index: 1000;
+
+          background: #333;
+          transition: all 1s;
+          transform: translateX(100%);
+          
+     }
+
+     .menu-bar.active{
+          transform: translateX(0%);
+     }
+
+     .menu-bar i{
+          position: absolute;
+          right: 50px;
+          top: 50px;
+     }
+
+    .menu-bar .enlaces ul li{
+          display: block;
+          padding: 20px 10px;
+          text-align: center;
+     }
+
+     .menu-bar .enlaces ul li a,
+     .menu-bar .sociales a{
+          font-size: 20px;
+     }
+
+     .imagen-productos{
+          width: 50%;
+          display: flex;
+          justify-content: center;
+     }
+
+     .imgen-productos img{
+          width: 100%;
+          transform: scale(1.1);
+          transition: all 0.5s;
+     }
+
+     
 }
