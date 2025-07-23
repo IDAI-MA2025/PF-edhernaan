@@ -17,4 +17,18 @@ enlaces.addEventListener('click', function() {
     menubar.classList.remove('active');
 });
 
+/* SLIDER DE PRODUCTOS */
+var contenedor 
+    = document.querySelector('.slider');
+var btnIzq = document.getElementById("btn-izquierda");
+var btnDer = document.getElementById("btn-derecha");
 
+btnDer.addEventListener('click', function() {
+    //container.scrollLeft = container.scrollLeft + 
+    contenedor.scrollLeft += contenedor.offsetWidth;
+});
+
+btnIzq.addEventListener('click', function() {
+    //container.scrollLeft = container.scrollLeft + 
+    contenedor.scrollLeft -= contenedor.offsetWidth;
+});
