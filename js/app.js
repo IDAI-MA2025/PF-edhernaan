@@ -32,3 +32,5 @@ btnIzq.addEventListener('click', function() {
     //container.scrollLeft = container.scrollLeft + 
     contenedor.scrollLeft -= contenedor.offsetWidth;
 });
+
+
